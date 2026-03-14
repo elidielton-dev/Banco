@@ -4,7 +4,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== BEM VINDO AO DELPAY ===");
+        System.out.println("BEM VINDO AO DELPAY");
         System.out.println("    SELECIONE UMA OPÇÃO");
         System.out.println("    1 - SACAR");
         System.out.println("    2 - DEPOSITAR");
