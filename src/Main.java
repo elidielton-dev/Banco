@@ -4,11 +4,11 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-    // LOGIN
+        // LOGIN
         String name = "admin";
         String senha = "1234";
 
-        for (int tentativas = 0; tentativas <= 4; tentativas ++) {
+        for (int tentativas = 0; tentativas <= 4; tentativas++) {
             System.out.println("USUARIO:");
             name = sc.next();
             System.out.println("SENHA:");
@@ -24,16 +24,44 @@ public class Main {
                 System.out.println("LOGIN BEM SUCEDIDO");
                 System.out.println("BEM-VINDO");
                 break;
+            }
+
+            int opcao;
+            do {
+                System.out.println("OPERAÇÕES");
+                System.out.println("DIGITE O NUMERO DA OPERAÇÃO");
+                System.out.println("     1 -SALDO");
+                System.out.println("   2 - DEPOSITAR");
+                System.out.println("    3 - SACAR");
+                System.out.println("    4 - SAIR");
+
+                opcao = sc.nextInt();
+
+                switch (opcao) {
+
+                    case 1:
+                        System.out.println("SALDO");
+                        System.out.println("R$2000,00");
+                        break;
+
+                    case 2:
+                        System.out.println("DEPOSITAR");
+                        System.out.println("DIGITE O VALOR:");
+                        double valorDeposito = sc.nextDouble();
+                        System.out.println("VALOR DO DEPOSITADO R$" + valorDeposito);
+                        break;
+
+
+
                 }
+
+            }
+            while (opcao !=4);
+            // OPÇÕES
+
 
         }
 
-    // OPÇÕES
-
-
-
 
     }
-
-
 }
