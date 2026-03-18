@@ -4,11 +4,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // LOGIN
-        String name ;
-        String senha ;
+        // VARIAVEIS
+        String name = "admin" ;
+        String senha = "123";
+        double saldo = 2000 ;
 
-        for (int tentativas = 0; tentativas <= 4; tentativas++) {
+        for (int tentativas = 0; tentativas <= 3; tentativas++) {
             System.out.println("USUARIO:");
             name = sc.next();
             System.out.println("SENHA:");
@@ -18,12 +19,13 @@ public class Main {
                 System.out.println("USUARIO OU SENHA INCORRETA!");
                 System.out.println("TENTE NOVAMENTE");
                 System.out.println("TENTATIVA " + tentativas + " DE 3");
+                break;
 
             } else {
 
                 System.out.println("LOGIN BEM SUCEDIDO");
                 System.out.println("BEM-VINDO");
-                break;
+
             }
 
             int opcao;
@@ -41,14 +43,15 @@ public class Main {
 
                     case 1:
                         System.out.println("SALDO");
-                        System.out.println("R$2000,00");
+                        System.out.println(saldo);
                         break;
 
                     case 2:
                         System.out.println("DEPOSITAR");
                         System.out.println("DIGITE O VALOR:");
                         double valorDeposito = sc.nextDouble();
-                        System.out.println("VALOR DO DEPOSITADO R$" + valorDeposito);
+                        saldo += valorDeposito;
+                        System.out.println("VALOR DO DEPOSITADO R$" + valorDeposito + " SALDO ATUAL DE R$" + saldo);
                         break;
 
                     case 3:
@@ -56,14 +59,14 @@ public class Main {
                             System.out.println(" SACAR ");
                             System.out.println("DIGITE UM VALOR:");
                             double valorSaque = sc.nextDouble();
-                            double saldoAtual = 2000;
+                            saldo -= valorSaque ;
 
-                            if (valorSaque <= 0 || valorSaque > saldoAtual) {
+                            if (valorSaque <= 0 || valorSaque > saldo) {
                                 System.out.println("IMPOSSIBILITADO DE EXECULTAR");
 
                             } else {
                                 System.out.println("SAQUE");
-                                System.out.println("VALOR DO SAQUE R$" + valorSaque);
+                                System.out.println("VALOR DO SAQUE R$" + valorSaque + "SALDO ATUAL DE R$" + saldo);
                                 break;
                             }
 
