@@ -36,5 +36,48 @@ public class Main {
                 System.out.println("   2 - DEPOSITAR");
                 System.out.println("    3 - SACAR");
                 System.out.println("    4 - SAIR");
+  menu = sc.nextInt();
 
+            switch (menu) {
+
+                case 1:
+                    System.out.println("Saldo Atual:");
+                    System.out.println(opcoes.saldo);
+                    break;
+
+                case 2:
+                System.out.println("Depositar");
+                System.out.println("Digita o valor");
+                double valorDeposito = sc.nextDouble();
+                opcoes.saldo += valorDeposito;
+                System.out.println("R$" + valorDeposito + "Depositado com sucesso" + "Seu saldo atual: R$" + opcoes.saldo);
+                break;
+
+                case 3:
+                    for (int saque = 0; saque <= 3; saque++) {
+                        System.out.println("Sacar");
+                        System.out.println("Digite o valor");
+                        double valorSacar = sc.nextDouble();
+
+                        if (valorSacar <= 0 || valorSacar > opcoes.saldo) {
+                            System.out.println("Operação Invalida");
+
+                        } else {
+                            opcoes.saldo -= valorSacar;
+                            System.out.println("Saque " + valorSacar);
+                            System.out.println("Operação realizada com sucesso | Saldo atual: R$" + opcoes.saldo);
+                            break;
+
+                        }
+                    }
+                    break;
+                case 4:
+                    System.out.println("Obrigado pela confiança");
+                    System.out.println("Saindo...");
+
+            }
+        }
+        while (menu !=4);
+
+}
                
